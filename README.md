@@ -1,24 +1,5 @@
-# README
+# projekt rswta
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+projekt nr 7 - blog
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+http://cez.wi.pb.edu.pl/moodle/file.php/170/ps/projekty.pdf
