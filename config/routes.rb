@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'public/home'
 
-  resources :articles
   resources :users
 
-  root 'welcome#index'
+  root 'public#home'
 end
