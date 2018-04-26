@@ -1,0 +1,4 @@
+ASSOCIATIONS
+
+http://guides.rubyonrails.org/association_basics.html
+https://www.sitepoint.com/brush-up-your-knowledge-of-rails-associations/
