@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'public/home'
+	get 'public/home'
 
-  resources :users
+	resources :users
+	resources :blogbases
 
-  root 'public#home'
+	root 'public#home'
 end

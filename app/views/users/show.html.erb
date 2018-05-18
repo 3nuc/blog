@@ -8,6 +8,22 @@
 	<%= @user.password %>
 </p>
 
+<%= link_to 'Add blog', new_blogbasis_path(@user) %>
+<table>
+	<tr>
+		<th>Blog name</th>
+		<th></th>
+	</tr>
+ 
+	<%= @blogs.each do |blog| %>
+    <tr>
+		<th><%= blog.name %></th>
+    </tr>
+	<% end %>
+</table>
+
+
+
 <%= link_to 'All users', users_path %>
 <%= link_to 'Edit', edit_user_path %>
 <%= link_to 'Home', root_path %>
