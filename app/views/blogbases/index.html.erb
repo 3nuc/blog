@@ -1,18 +1,21 @@
 <h1>Listing blogs</h1>
  
-<%= link_to 'Create new blog', new_blogbasis_path %>
 <table>
 	<tr>
 		<th>Name</th>
-		<th>User_ID</th>
+		<th>User_id</th>
+		<th>User login</th>
+		<th>Creation date</th>
 		<th></th>
 	</tr>
  
-	<% @blogs.each do |blog| %>
+	<% @blog.each do |blog| %>
     <tr>
 		<td><%= blog.name %></td>
 		<td><%= blog.user_id %></td>
-		<td><%= link_to 'Edit', edit_blogbasis_path(blog) %></td>
+		<td><%= User.find(blog.user_id).login %></td>
+		<td><%= blog.created_at %></td>
+		<td><%= link_to 'Show', blogbasis_path(blog) %></td>
     </tr>
 	<% end %>
 </table>

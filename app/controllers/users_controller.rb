@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	
 	def show
 		@user = User.find(params[:id])
-		@blogs = Blogbase.where(user_id: @user.id)
+		@blog = Blogbase.where(user_id: @user.id)
 	end
 
 	def new

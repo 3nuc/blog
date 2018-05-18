@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 	resources :users
 	resources :blogbases
+	resources :entries
 
 	root 'public#home'
 end

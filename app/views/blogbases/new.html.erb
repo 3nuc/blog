@@ -6,9 +6,7 @@
 		<%= form.text_field :name %>
 	</p>
 	
-	<%= @kurla %>
-	
-	<%= hidden_field_tag(:user_id, @id) %>
+	<%= form.hidden_field(:user_id, :value => params[:user_id]) %>
 	
 	<p>
 		<%= form.submit %>
