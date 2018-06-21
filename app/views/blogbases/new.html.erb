@@ -2,14 +2,14 @@
 
 <%= form_with model: @blog, local: true do |form| %>
 	<p>
-		<%= form.label :name %><br>
+		<%= form.label :name %>
 		<%= form.text_field :name %>
 	</p>
 	
 	<%= form.hidden_field(:user_id, :value => params[:user_id]) %>
 	
 	<p>
-		<%= form.submit %>
+		<%= form.submit 'Create Blog', :class=>'accept' %>
 	</p>
 <% end %>
 

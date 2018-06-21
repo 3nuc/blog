@@ -10,6 +10,7 @@
 
 <%= link_to 'Add blog', new_blogbasis_path(:user_id => @user.id) %>
 
+<div class="jumbotron">
 <table>
 	<tr>
 		<th>Blog name</th>
@@ -23,6 +24,7 @@
     </tr>
 	<% end %>
 </table>
+</div>
 
 <%= link_to 'All users', users_path %>
 <%= link_to 'Edit', edit_user_path %>

@@ -1,14 +1,22 @@
-<p>
-	<strong>Blog name:</strong>
-	<%= @blog.name %>
-</p>
+<div class="container">
+	<p>
+		<strong>Blog name:</strong>
+		<%= @blog.name %>
+		<%= link_to 'Add new Entry', new_entry_path(:blog_id => @blog.id) %>
+	</p>
 
-<%= link_to 'Add new Entry', new_entry_path(:blog_id => @blog.id) %>
-
-<% @entry.each do |entry| %>
-	<br><br>
-	<strong><%= entry.title %></strong>
-	(<%= entry.created_at %>)
-	<br>
-	<%= entry.text %>
-<% end %>
+	<% @entry.each do |entry| %>
+		<div class="row"/>
+		<div class="col-lg-8 col-md-10 mx-auto post-preview">
+			<hr/>
+			<a href="#">
+				<h2 class="post-title"><%= entry.title %></h2>
+				<div class="post-meta"><%= entry.created_at %></div>
+			</a>
+			<div class="text"><%= entry.text %></div>
+			
+		</div>
+		<div>
+	<% end %>
+	<hr/>
+</div>
