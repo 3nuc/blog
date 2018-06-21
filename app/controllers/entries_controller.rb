@@ -6,6 +6,10 @@ class EntriesController < ApplicationController
 		else
 			Entry.all
 		end
+	def show
+		@entry = Entry.find(params[:id])
+		@comment = Comment.where(entry_id: @entry.id)
+
 	end
 	
 	def new
