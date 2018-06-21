@@ -1,4 +1,13 @@
 class EntriesController < ApplicationController
+	
+	def index
+		@entry = if params[:term]
+			Entry.where('title LIKE ?', "%#{params[:term]}%")
+		else
+			Entry.all
+		end
+	end
+	
 	def new
 		@entry = Entry.new
 		@blog_id = params[:blog_id]

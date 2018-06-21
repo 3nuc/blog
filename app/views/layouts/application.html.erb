@@ -17,15 +17,12 @@
 		<li class="nav-item nav-link"><%= link_to 'All Blogs', {controller: 'blogbases'}, :class=>"text-light"%></li>
 		<li class="nav-item nav-link"><%= link_to 'All Users', {controller: 'users'}, :class=>"text-light"%></li>
 	  </ul>
-	  <form class="form-inline ml-auto">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
 	
-	<%= form_tag(root_path) do %>
+	<%= form_tag(entries_path, method: :get, :class=> 'form-inline ml-auto') do %>
 		<%= text_field_tag :term %>
-		<%= submit_tag 'Search' %>
-	<% end %>
+		<%= submit_tag 'Search', name: nil, :class=>'btn btn-outline-success my-2 my-sm-0' %>
+  <% end %>
+  
     </nav>
     <%= yield %>
     <footer class="mx-auto text-muted">
