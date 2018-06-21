@@ -1,4 +1,9 @@
 class EntriesController < ApplicationController
+	def show
+		@entry = Entry.find(params[:id])
+		@comment = Comment.where(entry_id: @entry.id)
+	end
+	
 	def new
 		@entry = Entry.new
 		@blog_id = params[:blog_id]

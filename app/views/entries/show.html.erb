@@ -1,0 +1,39 @@
+<div class="container">
+	<p>
+		<strong><%= @entry.title %></strong>
+	</p>
+	
+	<%= @entry.text %>
+	
+	<br /><br />
+	<strong>Comments:</strong>
+	
+	<% @comment.each do |comment| %>
+		<p>
+			<%= comment.poster_name %>
+			<%= comment.created_at %>
+		</p>
+		<p>
+			<%= comment.content %>
+		</p>
+	<% end %>
+	
+	<strong>Add your own comment!</strong>
+	
+	<%= form_with model: Comment.create, local: true do |form| %>
+	<p>
+		<%= form.label :poster_name %>
+		<%= form.text_field :poster_name %>
+	</p>
+	<p>
+		<%= form.label :content %>
+		<%= form.text_field :content %>
+	</p>
+	
+	<%= form.hidden_field(:entry_id, :value => (@entry.id)) %>
+	
+	<p>
+		<%= form.submit 'Post comment' %>
+	</p>
+	<% end %>
+</div>
