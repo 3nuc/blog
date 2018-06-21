@@ -8,4 +8,24 @@
 	<%= @user.password %>
 </p>
 
-<%= link_to 'Root', root_path %>
+<%= link_to 'Add blog', new_blogbasis_path(:user_id => @user.id) %>
+
+<div class="jumbotron">
+<table>
+	<tr>
+		<th>Blog name</th>
+		<th></th>
+	</tr>
+ 
+	<% @blog.each do |blog| %>
+    <tr>
+		<td><%= blog.name %></td>
+		<td><%= link_to 'Show', blogbasis_path(blog) %></td>
+    </tr>
+	<% end %>
+</table>
+</div>
+
+<%= link_to 'All users', users_path %>
+<%= link_to 'Edit', edit_user_path %>
+<%= link_to 'Home', root_path %>

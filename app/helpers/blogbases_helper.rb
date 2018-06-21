@@ -1,0 +1,2 @@
+module BlogbasesHelper
+end

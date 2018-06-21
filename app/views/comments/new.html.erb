@@ -1,0 +1,21 @@
+<h1>New Entry for blog "<%= Blogbase.find(@blog_id).name%>"<h1>
+
+<%= form_with model: @entry, local: true do |form| %>
+	<p>
+		<%= form.label :title %>
+		<%= form.text_field :title, placeholder: "Your blog post title" %>
+	</p>
+	
+	<p>
+		<%= form.label :text %>
+		<%= form.text_area :text, :class => 'new_textarea', placeholder: "Your blog text..." %>
+	</p>
+	
+	<%= form.hidden_field(:blogbase_id, :value => params[:blog_id]) %>
+	
+	<p>
+		<%= form.submit %>
+	</p>
+<% end %>
+
+<%= link_to 'Back to users', users_path %>

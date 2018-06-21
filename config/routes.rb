@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+	get 'public/home'
 
-  resources :articles
-  resources :users
+	resources :users
+	resources :blogbases
+	resources :entries
+	resources :comments
 
-  root 'welcome#index'
+	root 'public#home'
 end

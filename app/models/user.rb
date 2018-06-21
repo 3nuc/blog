@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  has_many :blogbases, dependent: :destroy
+  has_many :blogbases, class_name: 'Blogbase', dependent: :destroy
 end
