@@ -1,12 +1,23 @@
 <%= form_with model: @user, local: true do |form| %>
+	<% if @user.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+				<% for message in @user.errors.full_messages %>
+				  <li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
 	<p>
 		<%= form.label :login %>
 		<%= form.text_field :login %>
 	</p>
 	
 	<p>
-		<%= form.label :password %>
-		<%= form.password_field :password %>
+		<%= form.label :unhashed_pass %>
+		<%= form.password_field :unhashed_pass %>
 	</p>
 	
 	<p>

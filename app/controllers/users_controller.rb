@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+	before_action :off, :only => [:destroy]
+	before_action :protect, :only => [:edit, :update]
+
 	def index
 		@user = User.all
 	end
@@ -19,8 +22,11 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		
-		@user.save
-		redirect_to @user
+		if @user.save
+			redirect_to root_url, :notice => "Signed up!"
+		else
+			render "new"
+		end
 	end
 	
 	def update
@@ -37,9 +43,17 @@ class UsersController < ApplicationController
 		redirect_to users_path
 	end
 	
+	def off
+		redirect_to root_path
+	end
+	
+	def protect
+		redirect_to root_path unless current_user && (current_user.id.to_s == params[:id])
+	end
+	
 	private
 		def user_params
-			params.require(:user).permit(:login, :password)
+			params.require(:user).permit(:login, :unhashed_pass)
 		end
 		
 end
