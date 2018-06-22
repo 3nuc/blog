@@ -2,7 +2,9 @@
 	<p>
 		<strong>Blog name:</strong>
 		<%= @blog.name %>
-		<%= link_to 'Add new Entry', new_entry_path(:blog_id => @blog.id) %>
+		<% if current_user && current_user.id == @blog.user_id %>
+		<%= link_to 'Add new Entry', new_entry_path(:blogbase_id => @blog.id) %>
+		<% end %>
 	</p>
 
 	<% @entry.each do |entry| %>
@@ -13,7 +15,7 @@
 				<h2 class="post-title"><%= entry.title %></h2>
 				<div class="post-meta"><%= entry.created_at %></div>
 			<% end %>
-			<div class="text"><%= entry.text %></div>
+			<div class="text"><%= sanitize(entry.text) %></div>
 			
 		</div>
 		<div>

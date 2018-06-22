@@ -3,7 +3,7 @@
 		<strong><%= @entry.title %></strong>
 	</p>
 	
-	<%= @entry.text %>
+	<%= sanitize(@entry.text) %>
 	
 	<br /><br />
 	<strong>Comments:</strong>

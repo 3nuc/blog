@@ -19,6 +19,11 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Rails Admin
+gem 'rails_admin', '~> 1.3'
+# Bcrypt
+gem "bcrypt", :require => "bcrypt"
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 gem 'coffee-script-source', '1.8.0'
