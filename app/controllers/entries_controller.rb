@@ -1,10 +1,19 @@
 class EntriesController < ApplicationController
+
 	before_action :protectnew, :only => [:new]
 	before_action :protectcreate, :only => [:create]
+	
+	def index
+		@entry = if params[:term]
+			Entry.where('title LIKE ?', "%#{params[:term]}%")
+		else
+			Entry.all
+		end
 
 	def show
 		@entry = Entry.find(params[:id])
 		@comment = Comment.where(entry_id: @entry.id)
+
 	end
 	
 	def new

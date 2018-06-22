@@ -34,4 +34,5 @@ class BlogbasesController < ApplicationController
 		def blog_params
 			params.require(:blogbase).permit(:name, :user_id)
 		end
+
 end

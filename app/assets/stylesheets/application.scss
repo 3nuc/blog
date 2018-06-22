@@ -17,7 +17,7 @@
  */
  
 
-input:not([type="submit"]), 
+input:not([type="submit"]):not([type="button"]):not([type="button"]),
 textarea {
     border-radius: 5px;
     border-style: solid;
@@ -28,14 +28,14 @@ textarea {
     /*transition: all ease 0.3s;*/
 }
 
-input:not([type="submit"]):focus, 
+input:not([type="submit"]):not([type="button"]):focus, 
 textarea:focus {
     border-width: 1px;
     border-color: blue;
     border-radius: 0 0;    
 }
 
-input[type="submit"] {
+/*input[type="submit"] {
     box-shadow: 5px 5px lightgray;
     transition: all ease 0.1s;
     border: 0;
@@ -44,7 +44,7 @@ input[type="submit"] {
     background: green;
     color: whitesmoke;
     padding: 5  px;
-}
+}*/
 
 input[type="submit"]:hover {
     background: lime;
