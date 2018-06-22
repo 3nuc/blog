@@ -9,6 +9,7 @@ class EntriesController < ApplicationController
 		else
 			Entry.all
 		end
+	end
 
 	def show
 		@entry = Entry.find(params[:id])
